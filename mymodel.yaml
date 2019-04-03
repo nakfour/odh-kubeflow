@@ -1,0 +1,25 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  name: mymodel
+  labels:
+    app: seldon
+  namespace: kubeflow
+spec:
+  name: mymodel
+  predictors:
+  - componentSpecs:
+    - spec:
+        containers:
+        - image: nakfour/mymodel 
+          imagePullPolicy: Always
+          name: classifier
+    graph:
+      endpoint:
+        type: REST
+      name: classifier
+      type: MODEL
+    labels:
+      version: v1
+    name: mymodel
+    replicas: 1

@@ -5,12 +5,11 @@
         "labels": {
             "app": "seldon"
         },
-        "name": "mymodel",
-        "namespace": "booth-demo"
+        "name": "mymodel"
     },
     "spec": {
         "annotations": {
-            "project_name": "booth-demo",
+            "project_name": "frauddetection",
             "deployment_version": "0.1"
         },
         "name": "mymodel",
